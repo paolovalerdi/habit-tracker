@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:habit_tracker/ui/home/home.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting();
   runApp(
-    ProviderScope(
-      child: const HabitTrackerApp(),
+    const ProviderScope(
+      child: HabitTrackerApp(),
     ),
   );
 }

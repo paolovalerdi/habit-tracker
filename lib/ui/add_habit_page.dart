@@ -28,7 +28,6 @@ class AddHabitPage extends StatelessWidget {
           icon: const Icon(Icons.arrow_back_rounded),
           onPressed: Navigator.of(context).maybePop,
         ),
-        title: const Text('Add'),
       ),
       body: _Content(),
     );
@@ -48,7 +47,7 @@ class _Content extends HookConsumerWidget {
     final title = useTextEditingController();
     final description = useTextEditingController();
     final startDate = useTextEditingController(
-      text: 'Starting at: ${DateFormat.yMMMEd().format(DateTime.now())}',
+      text: 'Inicias el ${DateFormat.yMMMMEEEEd("es").format(DateTime.now())}',
     );
     final titleUpdate = useValueListenable(title);
     final descriptionUpdate = useValueListenable(description);
@@ -73,7 +72,7 @@ class _Content extends HookConsumerWidget {
           ),
           decoration: InputDecoration(
             border: InputBorder.none,
-            hintText: 'Go to bed before 10 PM',
+            hintText: 'Dormir temprano',
             hintStyle: style.headline6?.copyWith(
               color: Colors.black.withOpacity(0.5),
               fontWeight: FontWeight.bold,
@@ -88,7 +87,7 @@ class _Content extends HookConsumerWidget {
           controller: description,
           decoration: const InputDecoration(
             border: InputBorder.none,
-            hintText: 'Description',
+            hintText: 'Descripción',
             contentPadding: EdgeInsets.symmetric(
               horizontal: 16,
             ),
@@ -99,7 +98,6 @@ class _Content extends HookConsumerWidget {
           controller: startDate,
           decoration: const InputDecoration(
             border: InputBorder.none,
-            hintText: 'Description',
             enabled: false,
             contentPadding: EdgeInsets.symmetric(
               horizontal: 16,
@@ -222,7 +220,7 @@ class _Content extends HookConsumerWidget {
                     Navigator.of(context).maybePop();
                   }
                 : null,
-            child: const Text('Start'),
+            child: const Text('Comenzar'),
           ),
         ).toSliver(),
         SizedBox(height: padding.bottom + 16).toSliver(),
