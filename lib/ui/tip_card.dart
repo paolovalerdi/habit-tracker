@@ -26,7 +26,7 @@ class TipCard extends HookWidget {
         margin: EdgeInsets.zero,
         color: Colors.yellow.shade600,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(14),
         ),
         child: Padding(
           padding: const EdgeInsets.all(16),

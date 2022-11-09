@@ -40,7 +40,7 @@ class _Content extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final currentColor = useState(Colors.accents.first);
+    final currentColor = useState(Colors.primaries.first.shade700);
     final currentIcon = useState(Icons.add);
     final enabled = useState(false);
     final padding = MediaQuery.of(context).padding;
@@ -160,9 +160,9 @@ class _Content extends HookConsumerWidget {
           sliver: SliverGrid(
             delegate: SliverChildListDelegate(
               List.from(
-                Colors.accents.map(
+                Colors.primaries.map(
                   (it) => Card(
-                    color: it,
+                    color: it.shade500,
                     elevation: 1,
                     margin: EdgeInsets.zero,
                     shape: RoundedRectangleBorder(

@@ -23,7 +23,7 @@ class HabitCard extends StatelessWidget implements PreferredSizeWidget {
       margin: EdgeInsets.zero,
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(14),
       ),
       child: CustomPaint(
         painter: _Painter(habit.color),
@@ -73,7 +73,7 @@ class _Painter extends CustomPainter {
     canvas.drawCircle(
       Offset(0, size.height / 2),
       size.width * 0.65,
-      Paint()..color = darken(color, 0.12),
+      Paint()..color = darken(color, 0.035),
     );
   }
 
