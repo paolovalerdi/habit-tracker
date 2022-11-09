@@ -3,6 +3,7 @@ import 'package:habit_tracker/data/providers.dart';
 import 'package:habit_tracker/ui/add_habit_page.dart';
 import 'package:habit_tracker/ui/habit_card.dart';
 import 'package:habit_tracker/ui/home/toolbar.dart';
+import 'package:habit_tracker/ui/tip_card.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class Home extends StatelessWidget {
@@ -49,14 +50,27 @@ class _HabitsGrid extends HookConsumerWidget {
                 Icons.sentiment_dissatisfied_rounded,
                 size: 64,
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 16),
               Text(
                 'Start creating new habits',
                 style: styles.headline6?.copyWith(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
-              )
+              ),
+              const SizedBox(height: 8),
+              Text(
+                "There's some tips that may help you get started",
+                style: styles.bodyText1
+              ),
+              const SizedBox(height: 24),
+              TipCard(
+                tips: [
+                  'Now that you have established a specific goal, it’s time to think about what will cue you to follow through. Scientists have proven that you’ll make more progress toward your goal if you decide not just what you’ll do, but when you’ll be cued to do it, as well as where you’ll do it and how you’ll get there.',
+                  "When we set out to build a new habit, most of us overestimate our willpower and set a course for the most efficient path to achieving our end goal. Say you hope to get fit by exercising regularly – you’ll likely look for a workout that can generate quick results like grinding it out on a treadmill. But research has shown you’ll persist longer and ultimately achieve more if you instead focus on finding ways to make goal pursuit fun.",
+                  "By the time we put a behavior on autopilot, a lot of us fall into fairly consistent routines, tending to exercise, study or take our medication at the same time of day and in the same place. But when you’re in the start-up phase of habit building, contrary to popular opinion, my research suggests it’s important to deliberately insert some variability into your routine.",
+                ],
+              ),
             ],
           ),
         ),
